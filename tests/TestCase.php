@@ -16,6 +16,7 @@ class TestCase extends UnitTestCase
     public function setUp()
     {
         $config = Client::getInstance();
+        $config->flush();
         $config->load(TESTS_DIR . '/data/');
     }
 }

@@ -22,4 +22,9 @@ class BaseTest extends TestCase
         $this->assertEquals('dbs.db2', Client::getInstance()->get('dbs.db2')->name);
         $this->assertEquals('dbs.redis', Client::getInstance()->get('dbs.redis')->name);
     }
+
+    public function testOffsetGet()
+    {
+        $this->assertEquals('dbs.db2', Client::getInstance()->get('dbs.db2')['name']);
+    }
 }

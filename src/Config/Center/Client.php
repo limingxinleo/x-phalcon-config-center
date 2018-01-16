@@ -13,17 +13,14 @@ use Phalcon\Config;
 use Phalcon\Config\Adapter\Ini;
 use Symfony\Component\Finder\Finder;
 use Xin\Traits\Common\InstanceTrait;
+use Xin\Traits\Common\Macroable;
 
 class Client
 {
-    use InstanceTrait;
+    use InstanceTrait, Macroable;
 
     /** @var Config[] */
     public $configs = [];
-
-    // public $exts = [
-    //     'php'=>
-    // ];
 
     /**
      * @desc   加载配置文件
@@ -61,6 +58,7 @@ class Client
                 break;
             case 'ini':
                 $this->configs[$key] = new Ini($path, INI_SCANNER_NORMAL);
+                break;
         }
     }
 

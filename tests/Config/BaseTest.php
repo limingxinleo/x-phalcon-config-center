@@ -13,7 +13,7 @@ use Xin\Phalcon\Config\Center\Client;
 
 class BaseTest extends TestCase
 {
-    public function testName()
+    public function testNameCase()
     {
         $this->assertEquals('app', Client::getInstance()->get('app')->name);
         $this->assertEquals('data', Client::getInstance()->get('data')->name);
@@ -23,8 +23,17 @@ class BaseTest extends TestCase
         $this->assertEquals('dbs.redis', Client::getInstance()->get('dbs.redis')->name);
     }
 
-    public function testOffsetGet()
+    public function testOffsetGetCase()
     {
         $this->assertEquals('dbs.db2', Client::getInstance()->get('dbs.db2')['name']);
+    }
+
+    public function testMacroCase()
+    {
+        Client::macro('getAppValue', function ($key) {
+            return Client::getInstance()->get('app')->$key;
+        });
+
+        $this->assertEquals('app', Client::getInstance()->getAppValue('name'));
     }
 }

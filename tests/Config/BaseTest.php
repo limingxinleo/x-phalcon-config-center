@@ -9,11 +9,17 @@
 namespace Tests\Config;
 
 use Tests\TestCase;
+use Xin\Phalcon\Config\Center\Client;
 
 class BaseTest extends TestCase
 {
-    public function testExample()
+    public function testName()
     {
-        $this->assertTrue(true);
+        $this->assertEquals('app', Client::getInstance()->get('app')->name);
+        $this->assertEquals('data', Client::getInstance()->get('data')->name);
+        $this->assertEquals('dbs.db1', Client::getInstance()->get('dbs.db1')->name);
+        $this->assertEquals('dbs.db2', Client::getInstance()->get('dbs.db2')->name);
+        $this->assertEquals('dbs.db2', Client::getInstance()->get('dbs.db2')->name);
+        $this->assertEquals('dbs.redis', Client::getInstance()->get('dbs.redis')->name);
     }
 }

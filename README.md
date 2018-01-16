@@ -5,6 +5,12 @@
 composer require limingxinleo/x-phalcon-config-center
 ~~~
 
+## 文件类型支持
+- php
+- ini
+
+> 其他类型随缘支持
+
 ## 使用
 ~~~php
 <?php

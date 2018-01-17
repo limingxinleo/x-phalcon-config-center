@@ -36,4 +36,10 @@ class BaseTest extends TestCase
 
         $this->assertEquals('app', Client::getInstance()->getAppValue('name'));
     }
+
+    public function testIniArrayCase()
+    {
+        $arr = Client::getInstance()->get('data')->array->test;
+        $this->assertEquals([1, 'Thanks'], $arr->toArray());
+    }
 }

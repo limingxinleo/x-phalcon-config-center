@@ -2,7 +2,7 @@
     "name": "limingxinleo/x-phalcon-config-center",
     "description": "Phalcon 配置中心",
     "type": "library",
-    "license": "Mit",
+    "license": "MIT",
     "authors": [
         {
             "name": "李铭昕",

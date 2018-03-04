@@ -1,5 +1,7 @@
 # X-Phalcon-Config-Center
 
+[![Build Status](https://travis-ci.org/limingxinleo/x-phalcon-config-center.svg?branch=master)](https://travis-ci.org/limingxinleo/x-phalcon-config-center)
+
 ## 安装
 ~~~
 composer require limingxinleo/x-phalcon-config-center
